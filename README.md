@@ -104,6 +104,19 @@ Section "Device"
     Option "DRI" "False"
 EndSection
 ```
+## SOLUTION 7: 
+Open a terminal and execute the following commands:
 ```bash
-
+sudo apt update
+sudo apt install gksu
+```
+```bash
+gksudo gedit /etc/default/grub
+```
+Add radeon.modeset=0 to this line -> GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+so that it reads -> GRUB_CMDLINE_LINUX_DEFAULT="quiet splash radeon.modeset=0"
+Save this change and update the GRUB configuration sudo update-grub
+Reboot the system, now you use the intel graphics and AMD is deactivated.
+```bash
+sudo reboot
 ```
