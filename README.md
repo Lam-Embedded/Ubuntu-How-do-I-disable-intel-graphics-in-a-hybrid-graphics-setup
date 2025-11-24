@@ -77,7 +77,6 @@ lsmod | grep -E "i915|xe"
 
 ## SOLUTION 4: Reduce GPU power but still use graphics
 ```bash
-# Ví dụ bật chế độ tiết kiệm
 echo "battery" | sudo tee /sys/class/drm/card0/device/power_dpm_state
 ```
 
